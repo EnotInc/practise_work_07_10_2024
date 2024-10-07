@@ -20,22 +20,31 @@ namespace practise_cs
         // Задание номер 1.1
         public static void firstTask()
         {
-            Console.WriteLine("Enter first number");
-            float a = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter first number");
+                float a = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter second number");
-            float b = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter second number");
+                float b = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter third number");
-            float c = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter third number");
+                float c = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter forth number");
-            float d = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter forth number");
+                float d = Convert.ToInt32(Console.ReadLine());
 
-            float result = (a + b + c + d) / 4;
-            Console.WriteLine("The answer is: " + result);
+                float result = (a + b + c + d) / 4;
+                Console.WriteLine("The answer is: " + result);
 
-            back();
+                back();
+            }
+            catch
+            {
+                Console.WriteLine("You entered the wrong Number");
+
+                back();
+            }
         }
 
 
@@ -43,105 +52,122 @@ namespace practise_cs
         // Задание номер 1.2
         public static void secondTask()
         {
-            Console.WriteLine("Enter first number");
-            float first = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter second number");
-            float second = Convert.ToInt32(Console.ReadLine());
-
-
-            Console.WriteLine("What you wanna do?");
-            Console.WriteLine("a) add");
-            Console.WriteLine("b) substract");
-            Console.WriteLine("c) multiply");
-            Console.WriteLine("d) devide");
-            Console.WriteLine("e) remainder from division");
-
-            string action = Console.ReadLine();
-            switch (action)
+            try
             {
-                case "a":
-                    Console.WriteLine($"{first} + {second} = {first + second}");
-                    break;
+                Console.WriteLine("Enter first number");
+                float first = Convert.ToInt32(Console.ReadLine());
 
-                case "b":
-                    Console.WriteLine($" {first} - {second} = {first - second}");
-                    break;
+                Console.WriteLine("Enter second number");
+                float second = Convert.ToInt32(Console.ReadLine());
 
-                case "c":
-                    Console.WriteLine($" {first} * {second} = {first * second}");
-                    break;
 
-                case "d":
-                    Console.WriteLine($" {first} / {second} = {first / second}");
-                    break;
+                Console.WriteLine("What you wanna do?");
+                Console.WriteLine("a) add");
+                Console.WriteLine("b) substract");
+                Console.WriteLine("c) multiply");
+                Console.WriteLine("d) devide");
+                Console.WriteLine("e) remainder from division");
 
-                case "e":
-                    float answer = first % second;
-                    Console.WriteLine($" {first} % {second} = {answer}");
-                    break;
+                string action = Console.ReadLine();
+                switch (action)
+                {
+                    case "a":
+                        Console.WriteLine($"{first} + {second} = {first + second}");
+                        break;
 
-                default:
-                    Console.WriteLine("You entered wrong sybol");
-                    break;
+                    case "b":
+                        Console.WriteLine($" {first} - {second} = {first - second}");
+                        break;
+
+                    case "c":
+                        Console.WriteLine($" {first} * {second} = {first * second}");
+                        break;
+
+                    case "d":
+                        Console.WriteLine($" {first} / {second} = {first / second}");
+                        break;
+
+                    case "e":
+                        float answer = first % second;
+                        Console.WriteLine($" {first} % {second} = {answer}");
+                        break;
+
+                    default:
+                        Console.WriteLine("You entered wrong sybol");
+                        break;
+                }
+
+                back();
             }
+            catch
+            {
+                Console.WriteLine("You entered the wrong Number");
 
-            back();
+                back();
+            }
         }
 
 
         // Задание номер 1.3
         public static void thirdTask()
         {
+            try
+            {
+                Console.WriteLine("Select the temperature input scale:");
+                Console.WriteLine("1) Celsius");
+                Console.WriteLine("2) Kelvin");
+                Console.WriteLine("3) Fahrenheit");
 
-            Console.WriteLine("Select the temperature input scale:");
-            Console.WriteLine("1) Celsius");
-            Console.WriteLine("2) Kelvin");
-            Console.WriteLine("3) Fahrenheit");
+                string firstDegreeType = Console.ReadLine();
+                Console.WriteLine("Enter the temperature");
+                float firstDegree = Convert.ToInt32(Console.ReadLine()); 
 
-            string firstDegreeType = Console.ReadLine();
-            Console.WriteLine("Enter the temperature");
-            float firstDegree = Convert.ToInt32(Console.ReadLine()); 
+                Console.WriteLine("Select the temperature input scale:");
+                Console.WriteLine("1) Celsius");
+                Console.WriteLine("2) Kelvin");
+                Console.WriteLine("3) Fahrenheit");
 
-            Console.WriteLine("Select the temperature input scale:");
-            Console.WriteLine("1) Celsius");
-            Console.WriteLine("2) Kelvin");
-            Console.WriteLine("3) Fahrenheit");
+                string secondDegreeType = Console.ReadLine();
 
-            string secondDegreeType = Console.ReadLine();
+                if (firstDegreeType == secondDegreeType)
+                {
+                    Console.WriteLine();
+                }
+                else if (firstDegreeType == "1" && secondDegreeType == "2")
+                {
+                    Console.WriteLine($" {firstDegree} Celsius in Kelvin = {273.15 + firstDegree}");
+                    back();
+                }
+                else if (firstDegreeType == "1" && secondDegreeType == "3")
+                {
+                    Console.WriteLine($" {firstDegree} Celsius in Kelvin = {30 + (2 * firstDegree)}");
+                    back();
+                }
+                else if (firstDegreeType == "2" && secondDegreeType == "1")
+                {
+                    Console.WriteLine($" {firstDegree} Celsius in Kelvin = {-273.15 + firstDegree}");
+                    back();
+                }
+                else if (firstDegreeType == "2" && secondDegreeType == "3")
+                {
+                    Console.WriteLine($" {firstDegree} Celsius in Kelvin = {(firstDegree - 273.15) * 9 / 5 + 32}");
+                    back();
+                }
+                else if (firstDegreeType == "3" && secondDegreeType == "1")
+                {
+                    Console.WriteLine($" {firstDegree} Celsius in Kelvin = {(firstDegree - 30) / 2}");
+                    back();
+                }
+                else if (firstDegreeType == "3" && secondDegreeType == "2")
+                {
+                    Console.WriteLine($" {firstDegree} Celsius in Kelvin = {(firstDegree - 32) / 9 / 5 + 273.15}");
+                    back();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("You entered the wrong Number");
 
-            if (firstDegreeType == secondDegreeType)
-            {
-                Console.WriteLine();
-            }
-            else if (firstDegreeType == "1" && secondDegreeType == "2")
-            {
-                Console.WriteLine($" {firstDegree} Celsius in Kelvin = {273.15 + firstDegree}");
-                back();
-            }
-            else if (firstDegreeType == "1" && secondDegreeType == "3")
-            {
-                Console.WriteLine($" {firstDegree} Celsius in Kelvin = {30 + (2 *firstDegree)}");
-                back();
-            }
-            else if (firstDegreeType == "2" && secondDegreeType == "1")
-            {
-                Console.WriteLine($" {firstDegree} Celsius in Kelvin = {- 273.15 + firstDegree}");
-                back();
-            }
-            else if (firstDegreeType == "2" && secondDegreeType == "3")
-            {
-                Console.WriteLine($" {firstDegree} Celsius in Kelvin = {(firstDegree - 273.15) * 9/5 + 32}");
-                back();
-            }
-            else if (firstDegreeType == "3" && secondDegreeType == "1")
-            {
-                Console.WriteLine($" {firstDegree} Celsius in Kelvin = {(firstDegree - 30) / 2}");
-                back();
-            }
-            else if (firstDegreeType == "3" && secondDegreeType == "2")
-            {
-                Console.WriteLine($" {firstDegree} Celsius in Kelvin = {(firstDegree - 32) / 9/5 + 273.15}");
                 back();
             }
         }
@@ -150,13 +176,22 @@ namespace practise_cs
         // Задание 1.4
         public static void forthTask()
         {
-            Console.WriteLine("Enter your path");
-            string str = Console.ReadLine();
-            string[] parts = str.Split('/');
+            try
+            {
+                Console.WriteLine("Enter your path");
+                string str = Console.ReadLine();
+                string[] parts = str.Split('/');
 
-            Console.WriteLine(parts[parts.Length - 1]);
+                Console.WriteLine(parts[parts.Length - 1]);
 
-            back();
+                back();
+            }
+            catch
+            {
+                Console.WriteLine("You entered the wrong Number");
+
+                back();
+            }
         }
 
 
@@ -164,159 +199,213 @@ namespace practise_cs
 
         public static void fithTask()
         {
-            Console.WriteLine("Enter your sentence");
-            string str = Console.ReadLine();
-            string[] parts = str.Split(' ');
-
-            string maxlen = "";
-
-            for (int i = 0; i < parts.Length; i++)
+            try
             {
-                string currentlen = parts[i];
-                if (maxlen.Length < currentlen.Length)
+                Console.WriteLine("Enter your sentence");
+                string str = Console.ReadLine();
+                string[] parts = str.Split(' ');
+
+                string maxlen = "";
+
+                for (int i = 0; i < parts.Length; i++)
                 {
-                    maxlen = parts[i];
+                    string currentlen = parts[i];
+                    if (maxlen.Length < currentlen.Length)
+                    {
+                        maxlen = parts[i];
+                    }
                 }
+
+                Console.WriteLine("The longiest word is " + maxlen);
+
+                back();
             }
+            catch
+            {
+                Console.WriteLine("You entered the wrong Number");
 
-            Console.WriteLine("The longiest word is " + maxlen);
-
-            back();
+                back();
+            }
         }
 
 
         // Задание 1.6
         public static void sixthTask()
         {
-            Console.WriteLine("Enter you first arrey separetad be space");
-            string str = Console.ReadLine();
-            string[] firstArrey = str.Split(' '); 
-
-            Console.WriteLine("Enter you second arrey separetad be space");
-            str = Console.ReadLine();
-            string[] secondArrey = str.Split(' ');
-
-            for (int i = 0; i < firstArrey.Length; i++)
+            try
             {
-                Console.Write($"{Convert.ToInt32(firstArrey[i]) * Convert.ToInt32(secondArrey[i])} ");
-            }
+                Console.WriteLine("Enter you first arrey separetad be space");
+                string str = Console.ReadLine();
+                string[] firstArrey = str.Split(' ');
 
-            back();
+                Console.WriteLine("Enter you second arrey separetad be space");
+                str = Console.ReadLine();
+                string[] secondArrey = str.Split(' ');
+
+                for (int i = 0; i < firstArrey.Length; i++)
+                {
+                    Console.Write($"{Convert.ToInt32(firstArrey[i]) * Convert.ToInt32(secondArrey[i])} ");
+                }
+
+                back();
+            }
+            catch
+            {
+                Console.WriteLine("You entered the wrong Number");
+
+                back();
+            }
         }
 
 
         // Задание 1.7
         public static void seventhTask()
         {
-            Console.WriteLine("Enter your five numbers separetad be space");
-            string str = Console.ReadLine();
-            string[] parts = str.Split(' ');
-
-            int maxnum = -999999999;
-            int minnum = 999999999;
-
-            for (int i = 0; i < parts.Length; i++)
+            try
             {
-                if (maxnum < Convert.ToInt32(parts[i]))
-                {
-                    maxnum = Convert.ToInt32(parts[i]);
-                }
-            }
+                Console.WriteLine("Enter your five numbers separetad be space");
+                string str = Console.ReadLine();
+                string[] parts = str.Split(' ');
 
-            for (int i = 0; i < parts.Length; i++)
+                int maxnum = -999999999;
+                int minnum = 999999999;
+
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    if (maxnum < Convert.ToInt32(parts[i]))
+                    {
+                        maxnum = Convert.ToInt32(parts[i]);
+                    }
+                }
+
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    if (minnum > Convert.ToInt32(parts[i]))
+                    {
+                        minnum = Convert.ToInt32(parts[i]);
+                    }
+                }
+
+                Console.WriteLine($"The max number is {maxnum}");
+                Console.WriteLine($"The min number is {minnum}");
+
+                back();
+            }
+            catch
             {
-                if (minnum > Convert.ToInt32(parts[i]))
-                {
-                    minnum = Convert.ToInt32(parts[i]);
-                }
+                Console.WriteLine("You entered the wrong Number");
+
+                back();
             }
-
-            Console.WriteLine($"The max number is {maxnum}");
-            Console.WriteLine($"The min number is {minnum}");
-
-            back();
         }
 
 
         // Задание 1.8
         public static void eightTask()
         {
-            Console.WriteLine("Enter the number of steps");
-            int steps = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("");
-
-            string pyromid = "";
-
-            for (int i = 1; i <= steps; i++)
+            try
             {
-                pyromid += i;
-                Console.WriteLine(pyromid);
-            }
+                Console.WriteLine("Enter the number of steps");
+                int steps = Convert.ToInt32(Console.ReadLine());
 
-            back();
+                Console.WriteLine("");
+
+                string pyromid = "";
+
+                for (int i = 1; i <= steps; i++)
+                {
+                    pyromid += i;
+                    Console.WriteLine(pyromid);
+                }
+
+                back();
+            }
+            catch
+            {
+                Console.WriteLine("You entered the wrong Number");
+
+                back();
+            }
         }
 
 
         // Заднание 1 из 2-й части
         public static void partTwo()
         {
-            for (int i = 1; i < 10; i++)
+            try
             {
-                for (int j = 1; j < 10; j++)
+                for (int i = 1; i < 10; i++)
                 {
-                    Console.Write($"{i} x {j} = {i * j} | ");
+                    for (int j = 1; j < 10; j++)
+                    {
+                        Console.Write($"{i} x {j} = {i * j} | ");
+                    }
+                    Console.WriteLine("");
+
                 }
-                Console.WriteLine("");
 
+                back();
             }
+            catch
+            {
+                Console.WriteLine("You entered the wrong Number");
 
-            back();
+                back();
+            }
         }
 
 
         // Задание 1 из 3-ей части. Вариант 15
         public static void partThree()
         {
-            Console.WriteLine("Choose the task in part 3");
-            Console.WriteLine("1) integers up to 100");
-            Console.WriteLine("2) integers from -100 to 5");
-            Console.WriteLine("3) all even number from 1 to 100");
-
-            string choose = Console.ReadLine();
-            Console.Clear();
-
-            switch (choose)
+            try
             {
-                case "1":
-                    for (int i = 1; i <= 100; i++)
-                    {
-                        Console.Write(i + " ");
-                    }
-                    Console.WriteLine("");
-                    break;
+                Console.WriteLine("Choose the task in part 3");
+                Console.WriteLine("1) integers up to 100");
+                Console.WriteLine("2) integers from -100 to 5");
+                Console.WriteLine("3) all even number from 1 to 100");
 
-                case "2":
-                    for (int i = -100; i <= 5; i++)
-                    {
-                        Console.Write(i + " ");
-                    }
-                    Console.WriteLine("");
-                    break;
+                string choose = Console.ReadLine();
+                Console.Clear();
 
-                case "3":
-                    for (int i = 2; i <= 100; i+=2)
-                    {
-                        Console.Write(i + " ");
-                    }
-                    Console.WriteLine("");
-                    break;
+                switch (choose)
+                {
+                    case "1":
+                        for (int i = 1; i <= 100; i++)
+                        {
+                            Console.Write(i + " ");
+                        }
+                        Console.WriteLine("");
+                        break;
 
-                default:
-                    Console.WriteLine("You entered the wrong number");
-                    break;
+                    case "2":
+                        for (int i = -100; i <= 5; i++)
+                        {
+                            Console.Write(i + " ");
+                        }
+                        Console.WriteLine("");
+                        break;
+
+                    case "3":
+                        for (int i = 2; i <= 100; i += 2)
+                        {
+                            Console.Write(i + " ");
+                        }
+                        Console.WriteLine("");
+                        break;
+
+                    default:
+                        Console.WriteLine("You entered the wrong number");
+                        break;
+                }
+                back();
             }
-            back();
+            catch
+            {
+                Console.WriteLine("You entered the wrong Number");
+
+                back();
+            }
         }
 
         static void Main(string[] args)
