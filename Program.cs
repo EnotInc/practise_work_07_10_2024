@@ -36,15 +36,12 @@ namespace practise_cs
 
                 float result = (a + b + c + d) / 4;
                 Console.WriteLine("The answer is: " + result);
-
-                back();
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
 
@@ -96,15 +93,12 @@ namespace practise_cs
                         Console.WriteLine("You entered wrong sybol");
                         break;
                 }
-
-                back();
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
 
@@ -136,40 +130,33 @@ namespace practise_cs
                 else if (firstDegreeType == "1" && secondDegreeType == "2")
                 {
                     Console.WriteLine($" {firstDegree} Celsius in Kelvin = {273.15 + firstDegree}");
-                    back();
                 }
                 else if (firstDegreeType == "1" && secondDegreeType == "3")
                 {
                     Console.WriteLine($" {firstDegree} Celsius in Kelvin = {30 + (2 * firstDegree)}");
-                    back();
                 }
                 else if (firstDegreeType == "2" && secondDegreeType == "1")
                 {
                     Console.WriteLine($" {firstDegree} Celsius in Kelvin = {-273.15 + firstDegree}");
-                    back();
                 }
                 else if (firstDegreeType == "2" && secondDegreeType == "3")
                 {
                     Console.WriteLine($" {firstDegree} Celsius in Kelvin = {(firstDegree - 273.15) * 9 / 5 + 32}");
-                    back();
                 }
                 else if (firstDegreeType == "3" && secondDegreeType == "1")
                 {
                     Console.WriteLine($" {firstDegree} Celsius in Kelvin = {(firstDegree - 30) / 2}");
-                    back();
                 }
                 else if (firstDegreeType == "3" && secondDegreeType == "2")
                 {
                     Console.WriteLine($" {firstDegree} Celsius in Kelvin = {(firstDegree - 32) / 9 / 5 + 273.15}");
-                    back();
                 }
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
 
@@ -183,15 +170,12 @@ namespace practise_cs
                 string[] parts = str.Split('/');
 
                 Console.WriteLine(parts[parts.Length - 1]);
-
-                back();
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
 
@@ -217,15 +201,12 @@ namespace practise_cs
                 }
 
                 Console.WriteLine("The longiest word is " + maxlen);
-
-                back();
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
 
@@ -246,15 +227,12 @@ namespace practise_cs
                 {
                     Console.Write($"{Convert.ToInt32(firstArrey[i]) * Convert.ToInt32(secondArrey[i])} ");
                 }
-
-                back();
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
 
@@ -288,15 +266,12 @@ namespace practise_cs
 
                 Console.WriteLine($"The max number is {maxnum}");
                 Console.WriteLine($"The min number is {minnum}");
-
-                back();
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
 
@@ -317,15 +292,12 @@ namespace practise_cs
                     pyromid += i;
                     Console.WriteLine(pyromid);
                 }
-
-                back();
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
 
@@ -343,15 +315,12 @@ namespace practise_cs
                     Console.WriteLine("");
 
                 }
-
-                back();
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
 
@@ -398,14 +367,12 @@ namespace practise_cs
                         Console.WriteLine("You entered the wrong number");
                         break;
                 }
-                back();
             }
             catch
             {
-                Console.WriteLine("You entered the wrong Number");
-
-                back();
+                Console.WriteLine("You entered the wrong value");
             }
+            back();
         }
 
         static void Main(string[] args)
